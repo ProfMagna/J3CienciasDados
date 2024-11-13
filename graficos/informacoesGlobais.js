@@ -1,6 +1,6 @@
-const url=https://raw.githubusercontent.com/silviosnjr/CienciaDeDados-CriandoGraficosDinamicosComJavaScript/refs/heads/Aula01/educacao/educacao-dados-globais.json
+const url='https://raw.githubusercontent.com/silviosnjr/CienciaDeDados-CriandoGraficosDinamicosComJavaScript/refs/heads/Aula01/educacao/educacao-dados-globais.json'
 
-async function vizualizarInformacoesGlobais() {
+async function visualizarInformacoesGlobais() {
     const res = await fetch(url)
     const dados = await res.json()
     const pessoasConectadas = (dados.total_pessoas_com_acesso_a_educacao/1e9) 
@@ -14,7 +14,7 @@ const paragrafo = document.createElement('p')
    paragrafo.innerHTML = `Você sabia que o mundo tem <span> ${pessoasNoMundo} </span> de pessoas e que aproximadamente <span> ${pessoasConectadas} </span> estão empregadas em serviços registrados. Eles trabalham <span> ${horas} </span> horas e <span>${minutos}</span> minutos por semana.<br>Isso significa que aproximadamente <span> ${porcentagemConectada}% </span>pessoas conectadas em alguma rede social. `
 
     const container = document.getElementById('graficos-container')
-container.appendChield(paragrafo):
+container.appendChild(paragrafo);
 }
 
-vizualizarInformacoesGlobais()
+visualizarInformacoesGlobais()
